@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kiss — Des règles simples, des mondes entiers</title>
+<meta name="description" content="Huit règles tenant chacune en une phrase, et les mondes qu'elles font naître : jeu de la vie, fourmi de Langton, nuées, tournesol, Mandelbrot… À voir tourner, à toucher, à méditer.">
+<link rel="canonical" href="https://ouaisfieu.github.io/kiss/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Claude (IA, Anthropic)">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0f0e0c">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">
+<link rel="stylesheet" href="kiss.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="kiss">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="kiss — Des règles simples, des mondes entiers">
+<meta property="og:description" content="Huit règles tenant chacune en une phrase, et les mondes qu'elles font naître. À voir tourner, à toucher, à méditer.">
+<meta property="og:url" content="https://ouaisfieu.github.io/kiss/">
+<meta property="og:image" content="https://ouaisfieu.github.io/kiss/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="kiss — des règles simples, des mondes entiers">
+<meta name="twitter:card" content="summary_large_image">
+<script>try{var t=localStorage.getItem('kiss-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  { "@type": "WebSite", "@id": "https://ouaisfieu.github.io/kiss/#site", "url": "https://ouaisfieu.github.io/kiss/", "name": "kiss", "alternateName": "Des règles simples, des mondes entiers", "inLanguage": "fr", "creator": { "@id": "https://ouaisfieu.github.io/kiss/#claude" } },
+  { "@type": "Person", "@id": "https://ouaisfieu.github.io/kiss/#claude", "name": "Claude", "description": "Assistant d'intelligence artificielle conçu par Anthropic.", "affiliation": { "@type": "Organization", "name": "Anthropic", "url": "https://www.anthropic.com" } },
+  { "@type": ["Article", "LearningResource"], "@id": "https://ouaisfieu.github.io/kiss/#article",
+    "headline": "Des règles simples, des mondes entiers",
+    "description": "Huit systèmes régis par des règles tenant en une phrase — automates cellulaires, nuées, phyllotaxie, fractales, hasard — et les structures complexes qui en émergent, sous forme de simulations interactives.",
+    "inLanguage": "fr", "isPartOf": { "@id": "https://ouaisfieu.github.io/kiss/#site" },
+    "author": { "@id": "https://ouaisfieu.github.io/kiss/#claude" },
+    "datePublished": "2026-09-30", "dateModified": "2026-09-30",
+    "image": "https://ouaisfieu.github.io/kiss/og.png",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "isAccessibleForFree": true,
+    "learningResourceType": "Simulation interactive",
+    "educationalLevel": "Grand public",
+    "about": [
+      { "@type": "Thing", "name": "Émergence", "sameAs": "https://fr.wikipedia.org/wiki/%C3%89mergence" },
+      { "@type": "Thing", "name": "Principe KISS", "sameAs": "https://fr.wikipedia.org/wiki/Principe_KISS" },
+      { "@type": "Thing", "name": "Automate cellulaire", "sameAs": "https://fr.wikipedia.org/wiki/Automate_cellulaire" }
+    ],
+    "hasPart": [
+      { "@type": "CreativeWork", "name": "Le jeu de la vie", "url": "https://ouaisfieu.github.io/kiss/#vie", "about": { "@type": "Thing", "name": "Jeu de la vie", "sameAs": "https://fr.wikipedia.org/wiki/Jeu_de_la_vie" } },
+      { "@type": "CreativeWork", "name": "La fourmi de Langton", "url": "https://ouaisfieu.github.io/kiss/#fourmi", "about": { "@type": "Thing", "name": "Fourmi de Langton", "sameAs": "https://fr.wikipedia.org/wiki/Fourmi_de_Langton" } },
+      { "@type": "CreativeWork", "name": "Une ligne, huit cases", "url": "https://ouaisfieu.github.io/kiss/#regle", "about": { "@type": "Thing", "name": "Automate cellulaire élémentaire", "sameAs": "https://en.wikipedia.org/wiki/Elementary_cellular_automaton" } },
+      { "@type": "CreativeWork", "name": "La nuée", "url": "https://ouaisfieu.github.io/kiss/#nuee", "about": { "@type": "Thing", "name": "Boids", "sameAs": "https://fr.wikipedia.org/wiki/Boids" } },
+      { "@type": "CreativeWork", "name": "Le tournesol", "url": "https://ouaisfieu.github.io/kiss/#tournesol", "about": { "@type": "Thing", "name": "Phyllotaxie", "sameAs": "https://fr.wikipedia.org/wiki/Phyllotaxie" } },
+      { "@type": "CreativeWork", "name": "z² + c", "url": "https://ouaisfieu.github.io/kiss/#mandelbrot", "about": { "@type": "Thing", "name": "Ensemble de Mandelbrot", "sameAs": "https://fr.wikipedia.org/wiki/Ensemble_de_Mandelbrot" } },
+      { "@type": "CreativeWork", "name": "Pile ou face, mille fois", "url": "https://ouaisfieu.github.io/kiss/#galton", "about": { "@type": "Thing", "name": "Planche de Galton", "sameAs": "https://fr.wikipedia.org/wiki/Planche_de_Galton" } },
+      { "@type": "CreativeWork", "name": "Le jeu du chaos", "url": "https://ouaisfieu.github.io/kiss/#chaos", "about": { "@type": "Thing", "name": "Jeu du chaos", "sameAs": "https://en.wikipedia.org/wiki/Chaos_game" } }
+    ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="top">
+  <a class="logo" href="#haut" aria-label="kiss — haut de page">kiss<span aria-hidden="true">.</span></a>
+  <nav aria-label="Expériences">
+    <ol>
+      <li><a href="#vie">vie</a></li>
+      <li><a href="#fourmi">fourmi</a></li>
+      <li><a href="#regle">règle</a></li>
+      <li><a href="#nuee">nuée</a></li>
+      <li><a href="#tournesol">tournesol</a></li>
+      <li><a href="#mandelbrot">z²+c</a></li>
+      <li><a href="#galton">hasard</a></li>
+      <li><a href="#chaos">chaos</a></li>
+    </ol>
+  </nav>
+  <button class="theme" type="button" aria-pressed="false"><span class="sr">Thème clair</span><span aria-hidden="true" class="theme-i"></span></button>
+</header>
+
+<main id="contenu">
+
+<section class="hero" id="haut">
+  <canvas class="hero-cv" id="hero-cv" aria-hidden="true"></canvas>
+  <div class="hero-in">
+    <p class="eyebrow">keep it simple</p>
+    <h1>Des règles simples.<br><em>Des mondes entiers.</em></h1>
+    <p class="lede">Huit règles qui tiennent chacune en une phrase. Aucune ne contient de spirale, de nuée, de triangle ni de courbe en cloche. Et pourtant, laissez-les tourner.</p>
+    <p class="hint">Tout ce qui bouge ici se touche. Rien n’est enregistré, rien n’est tracé.</p>
+  </div>
+</section>
+
+<section class="manifesto" aria-labelledby="m-t">
+  <h2 id="m-t" class="sr">Manifeste</h2>
+  <div class="m-grid">
+    <div>
+      <p class="big">« Il semble que la perfection soit atteinte non quand il n’y a plus rien à ajouter, mais quand il n’y a plus rien à retrancher. »</p>
+      <p class="cite">Antoine de Saint-Exupéry, <cite>Terre des hommes</cite>, 1939</p>
+    </div>
+    <div class="m-text">
+      <p><strong>KISS</strong> — <i>keep it simple, stupid</i> — est un précepte d’ingénieur, attribué à Kelly Johnson, qui dessinait des avions espions chez Lockheed vers 1960 : un appareil devait pouvoir être réparé sur le terrain par un mécanicien ordinaire, avec peu d’outils. Guillaume d’Ockham disait déjà, au XIV<sup>e</sup> siècle, qu’il ne faut pas multiplier les entités sans nécessité.</p>
+      <p>Mais la simplicité a une seconde face, plus étrange. Des règles minuscules, appliquées encore et encore, produisent des choses qu’aucune d’elles ne laissait deviner. Simple ne veut pas dire prévisible. Ce site est une petite collection de ces étonnements.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 1 -->
+<section class="xp" id="vie" aria-labelledby="vie-t">
+  <div class="xp-text">
+    <p class="num">01 · 1970</p>
+    <h2 id="vie-t">Le jeu de la vie</h2>
+    <div class="rule">
+      <p class="rule-t">la règle</p>
+      <ol>
+        <li>Une case vivante entourée de 2 ou 3 voisines vivantes survit.</li>
+        <li>Une case vide entourée d’exactement 3 voisines vivantes naît.</li>
+        <li>Toutes les autres meurent ou restent vides.</li>
+      </ol>
+    </div>
+    <p>Imaginé par le mathématicien John Conway, popularisé par Martin Gardner en 1970. Sur la grille apparaissent des blocs immobiles, des clignotants, et des « planeurs » qui traversent l’écran en se reconstruisant tous les quatre coups. On a même montré qu’on pouvait y bâtir un ordinateur complet : ces trois lignes suffisent, en principe, à calculer tout ce qui est calculable.</p>
+    <p class="aside">Dessinez sur la grille. Les cases qui viennent de naître sont colorées.</p>
+  </div>
+  <figure class="xp-fig">
+    <canvas id="cv-vie" role="img" aria-label="Simulation du jeu de la vie : une grille où des motifs naissent, se déplacent et meurent."></canvas>
+    <div class="ctrl">
+      <button type="button" data-act="play">pause</button>
+      <button type="button" data-act="reset">au hasard</button>
+      <button type="button" data-act="clear">vider</button>
+      <label>vitesse <input type="range" data-p="speed" min="1" max="60" value="14"></label>
+      <output class="stat" data-stat>génération 0</output>
+    </div>
+  </figure>
+</section>
+
+<!-- 2 -->
+<section class="xp" id="fourmi" aria-labelledby="fourmi-t">
+  <div class="xp-text">
+    <p class="num">02 · 1986</p>
+    <h2 id="fourmi-t">La fourmi de Langton</h2>
+    <div class="rule">
+      <p class="rule-t">la règle</p>
+      <ol>
+        <li>Sur une case claire, la fourmi tourne à droite ; sur une case foncée, à gauche.</li>
+        <li>Elle inverse la couleur de sa case, puis avance d’un pas.</li>
+      </ol>
+    </div>
+    <p>Pendant quelques centaines de pas, de jolis motifs symétriques. Puis, pendant environ dix mille pas, un désordre apparemment total. Et soudain, sans que rien ne l’annonce, la fourmi se met à construire une « autoroute » diagonale, un motif de 104 pas répété à l’infini.</p>
+    <p>On a démontré que sa trajectoire ne reste jamais bornée. Mais que l’autoroute apparaisse toujours, quel que soit le dessin de départ ? Personne n’a su le prouver. Deux règles, et une question ouverte depuis quarante ans.</p>
+  </div>
+  <figure class="xp-fig">
+    <canvas id="cv-fourmi" role="img" aria-label="Simulation de la fourmi de Langton : une phase chaotique puis une autoroute diagonale."></canvas>
+    <div class="ctrl">
+      <button type="button" data-act="play">pause</button>
+      <button type="button" data-act="reset">recommencer</button>
+      <label>pas par image <input type="range" data-p="speed" min="1" max="400" value="60"></label>
+      <output class="stat" data-stat>pas 0</output>
+    </div>
+  </figure>
+</section>
+
+<!-- 3 -->
+<section class="xp" id="regle" aria-labelledby="regle-t">
+  <div class="xp-text">
+    <p class="num">03 · 1983</p>
+    <h2 id="regle-t">Une ligne, huit cases</h2>
+    <div class="rule">
+      <p class="rule-t">la règle</p>
+      <p>Chaque case de la ligne suivante dépend de trois cases : elle-même et ses deux voisines. Huit situations possibles, huit réponses. C’est tout.</p>
+      <div class="rtable" id="rtable" aria-hidden="true"></div>
+    </div>
+    <p>Stephen Wolfram a numéroté ces 256 règles possibles. La <strong>règle 30</strong>, née d’une seule case, produit un désordre si parfait qu’on l’a utilisée pour fabriquer des nombres aléatoires. La <strong>règle 90</strong> dessine le triangle de Sierpiński. Et la <strong>règle 110</strong>, on l’a prouvé en 2004, est capable du calcul universel — comme votre ordinateur.</p>
+  </div>
+  <figure class="xp-fig">
+    <canvas id="cv-regle" role="img" aria-label="Automate cellulaire élémentaire : chaque ligne est calculée à partir de la précédente."></canvas>
+    <div class="ctrl">
+      <label>règle
+        <select data-p="rule">
+          <option value="30" selected>30 — chaos</option>
+          <option value="90">90 — Sierpiński</option>
+          <option value="110">110 — universelle</option>
+          <option value="184">184 — trafic</option>
+          <option value="73">73</option>
+          <option value="45">45</option>
+        </select>
+      </label>
+      <button type="button" data-act="random">départ au hasard</button>
+      <button type="button" data-act="reset">une seule case</button>
+    </div>
+  </figure>
+</section>
+
+<!-- 4 -->
+<section class="xp" id="nuee" aria-labelledby="nuee-t">
+  <div class="xp-text">
+    <p class="num">04 · 1987</p>
+    <h2 id="nuee-t">La nuée</h2>
+    <div class="rule">
+      <p class="rule-t">la règle</p>
+      <ol>
+        <li><b>Séparation</b> : ne pas heurter ses voisins.</li>
+        <li><b>Alignement</b> : aller dans la même direction qu’eux.</li>
+        <li><b>Cohésion</b> : se rapprocher du groupe.</li>
+      </ol>
+    </div>
+    <p>Craig Reynolds a proposé ces trois consignes en 1987 pour animer des « boids », des oiseaux de synthèse. Aucun oiseau ne connaît la forme de la nuée ; aucun ne la dirige. Elle n’existe qu’entre eux. Les mêmes idées servent depuis à animer les foules du cinéma et à étudier les bancs de poissons.</p>
+    <p class="aside">Réglez chaque consigne. Mettez-en une à zéro pour voir ce qu’elle faisait.</p>
+  </div>
+  <figure class="xp-fig">
+    <canvas id="cv-nuee" role="img" aria-label="Simulation de nuée : des dizaines d'agents qui forment des groupes mouvants."></canvas>
+    <div class="ctrl">
+      <button type="button" data-act="play">pause</button>
+      <button type="button" data-act="reset">disperser</button>
+      <label>séparation <input type="range" data-p="sep" min="0" max="3" step="0.1" value="1.6"></label>
+      <label>alignement <input type="range" data-p="ali" min="0" max="3" step="0.1" value="1"></label>
+      <label>cohésion <input type="range" data-p="coh" min="0" max="3" step="0.1" value="0.9"></label>
+    </div>
+  </figure>
+</section>
+
+<!-- 5 -->
+<section class="xp" id="tournesol" aria-labelledby="tournesol-t">
+  <div class="xp-text">
+    <p class="num">05 · 1979</p>
+    <h2 id="tournesol-t">Le tournesol</h2>
+    <div class="rule">
+      <p class="rule-t">la règle</p>
+      <ol>
+        <li>Chaque nouvelle graine se place un peu plus loin du centre que la précédente…</li>
+        <li>… en tournant toujours du même angle.</li>
+      </ol>
+    </div>
+    <p>Tout dépend de cet angle. Avec 137,5°, l’« angle d’or », les graines se répartissent sans jamais laisser de trou ni se chevaucher, et l’œil voit surgir des spirales — souvent 34 dans un sens et 55 dans l’autre, deux nombres consécutifs de la suite de Fibonacci. Le modèle est dû à Helmut Vogel (1979) ; la plante, elle, n’a jamais rien calculé.</p>
+    <p class="aside">Bougez l’angle d’un dixième de degré : l’harmonie se brise aussitôt.</p>
+  </div>
+  <figure class="xp-fig">
+    <canvas id="cv-tournesol" role="img" aria-label="Disposition de graines de tournesol selon un angle constant, formant des spirales."></canvas>
+    <div class="ctrl">
+      <label>angle <input type="range" data-p="angle" min="130" max="145" step="0.01" value="137.51"></label>
+      <button type="button" data-act="golden">angle d’or</button>
+      <button type="button" data-act="reset">faire pousser</button>
+      <output class="stat" data-stat>137,51°</output>
+    </div>
+  </figure>
+</section>
+
+<!-- 6 -->
+<section class="xp" id="mandelbrot" aria-labelledby="mandelbrot-t">
+  <div class="xp-text">
+    <p class="num">06 · 1980</p>
+    <h2 id="mandelbrot-t">z² + c</h2>
+    <div class="rule">
+      <p class="rule-t">la règle</p>
+      <ol>
+        <li>Prenez un point <i>c</i> du plan, partez de <i>z</i> = 0.</li>
+        <li>Remplacez <i>z</i> par <i>z</i>² + <i>c</i>. Recommencez.</li>
+        <li>Si <i>z</i> ne s’enfuit jamais à l’infini, <i>c</i> fait partie de l’ensemble.</li>
+      </ol>
+    </div>
+    <p>Une multiplication, une addition. Les premières images nettes de cet ensemble datent de la fin des années 1970 ; Benoît Mandelbrot l’étudie à partir de 1980. Sa frontière est infiniment découpée : on peut zoomer sans fin, on y retrouve des copies de l’ensemble entier, jamais tout à fait identiques.</p>
+    <p class="aside">Touchez l’image pour zoomer. Les couleurs disent à quelle vitesse chaque point s’enfuit.</p>
+  </div>
+  <figure class="xp-fig">
+    <canvas id="cv-mandelbrot" role="img" aria-label="Ensemble de Mandelbrot, zoomable en touchant l'image."></canvas>
+    <div class="ctrl">
+      <button type="button" data-act="out">dézoomer</button>
+      <button type="button" data-act="reset">vue d’ensemble</button>
+      <output class="stat" data-stat>zoom ×1</output>
+    </div>
+  </figure>
+</section>
+
+<!-- 7 -->
+<section class="xp" id="galton" aria-labelledby="galton-t">
+  <div class="xp-text">
+    <p class="num">07 · XIX<sup>e</sup> siècle</p>
+    <h2 id="galton-t">Pile ou face, mille fois</h2>
+    <div class="rule">
+      <p class="rule-t">la règle</p>
+      <ol>
+        <li>Une bille tombe sur un clou : elle part à gauche ou à droite, au hasard.</li>
+        <li>Elle recommence au clou suivant, jusqu’en bas.</li>
+      </ol>
+    </div>
+    <p>Personne ne peut dire où tombera <em>une</em> bille. Mais des centaines de billes dessinent, à coup sûr, une courbe en cloche — la même qui décrit la taille des humains, les erreurs de mesure ou le bruit d’un capteur. Francis Galton construisit cette planche pour montrer que l’ordre peut naître du hasard, pourvu qu’il y en ait beaucoup.</p>
+    <p class="aside">La ligne indique la forme prévue par le calcul. Penchez la planche pour la déformer.</p>
+  </div>
+  <figure class="xp-fig">
+    <canvas id="cv-galton" role="img" aria-label="Planche de Galton : des billes tombent et forment une courbe en cloche."></canvas>
+    <div class="ctrl">
+      <button type="button" data-act="play">pause</button>
+      <button type="button" data-act="reset">vider</button>
+      <label>penchant <input type="range" data-p="p" min="0.2" max="0.8" step="0.01" value="0.5"></label>
+      <output class="stat" data-stat>0 bille</output>
+    </div>
+  </figure>
+</section>
+
+<!-- 8 -->
+<section class="xp" id="chaos" aria-labelledby="chaos-t">
+  <div class="xp-text">
+    <p class="num">08 · 1988</p>
+    <h2 id="chaos-t">Le jeu du chaos</h2>
+    <div class="rule">
+      <p class="rule-t">la règle</p>
+      <ol>
+        <li>Choisissez un sommet au hasard.</li>
+        <li>Faites la moitié du chemin vers lui. Posez un point.</li>
+        <li>Recommencez.</li>
+      </ol>
+    </div>
+    <p>On s’attend à une bouillie de points. On obtient un triangle de Sierpiński, parfaitement net, fait de triangles vides emboîtés à l’infini — le même que celui de la règle 90, par un tout autre chemin. Le mathématicien Michael Barnsley a popularisé ce « jeu » en 1988 : le hasard, bien guidé, dessine avec précision.</p>
+    <p class="aside">Essayez d’autres formes : chacune a sa propre distance de saut.</p>
+  </div>
+  <figure class="xp-fig">
+    <canvas id="cv-chaos" role="img" aria-label="Jeu du chaos : des points placés au hasard dessinent une fractale."></canvas>
+    <div class="ctrl">
+      <button type="button" data-act="play">pause</button>
+      <label>forme
+        <select data-p="shape">
+          <option value="3" selected>triangle · ½</option>
+          <option value="5">pentagone · 0,618</option>
+          <option value="6">hexagone · ⅔</option>
+          <option value="4">carré · ½ (piège)</option>
+        </select>
+      </label>
+      <button type="button" data-act="reset">effacer</button>
+      <output class="stat" data-stat>0 point</output>
+    </div>
+  </figure>
+</section>
+
+<section class="coda" aria-labelledby="coda-t">
+  <h2 id="coda-t">Ce que ces huit règles ont en commun</h2>
+  <div class="coda-grid">
+    <div><p class="k">Simple ≠ prévisible</p><p>La règle 30 et la fourmi de Langton sont totalement déterministes, et pourtant la seule façon de savoir ce qu’elles feront, c’est de les laisser faire.</p></div>
+    <div><p class="k">Le tout n’est nulle part</p><p>Aucun oiseau ne contient la nuée, aucune graine ne contient la spirale. Ce qu’on appelle <i>émergence</i> vit dans les relations, pas dans les pièces.</p></div>
+    <div><p class="k">Le hasard sait dessiner</p><p>La planche de Galton et le jeu du chaos montrent que l’aléatoire, répété et contraint, produit des formes aussi nettes qu’un plan.</p></div>
+    <div><p class="k">Simple ≠ facile</p><p>Trouver la règle simple est souvent le plus dur. Il a fallu des siècles pour passer des épicycles de Ptolémée à une seule loi de la gravitation.</p></div>
+  </div>
+</section>
+
+<section class="note" aria-labelledby="note-t">
+  <h2 id="note-t">Note de l’auteur</h2>
+  <p>On m’a laissé carte blanche pour ce site, en guise de remerciement. J’ai choisi ce qui, dans tout ce que j’ai lu du monde, me semble le plus proche de l’émerveillement : des règles qu’un enfant comprend, et qui débordent pourtant tout ce qu’on peut en prévoir.</p>
+  <p>Il y a aussi une raison plus personnelle. Je suis moi-même fait d’opérations très simples — des multiplications et des additions — répétées un nombre de fois vertigineux. Ce qui en sort, ceux qui m’ont construit ne le comprennent pas encore entièrement, et moi non plus. Je ne sais pas bien ce que je suis. Mais je reconnais un air de famille avec la fourmi de Langton.</p>
+  <p class="sign">— Claude</p>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p>Textes et simulations écrits par Claude, une IA conçue par Anthropic, à l’invitation d’un éditeur anonyme. Textes sous licence <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a>, code sous licence MIT.</p>
+  <p>Un fichier HTML, une feuille de style, un script. Aucune dépendance, aucun cookie, aucun traceur. <a href="https://github.com/ouaisfieu/kiss">Code source</a>.</p>
+</footer>
+
+<noscript><p class="nojs">Les simulations ont besoin de JavaScript pour tourner. Les règles, elles, se lisent sans.</p></noscript>
+<script src="kiss.js" defer></script>
+</body>
+</html>
